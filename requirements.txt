@@ -1,0 +1,6 @@
+streamlit>=1.30.0
+instructor>=1.0.0
+llama-cpp-python>=0.2.20
+pydantic>=2.0.0
+python-pptx>=0.6.21
+graphviz>=0.20
