@@ -1,0 +1,15 @@
+# Large model files & local cache
+models/
+*.gguf
+
+# Generated output files
+*.pptx
+*.json
+
+# Environment & Python build artifacts
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+.DS_Store
