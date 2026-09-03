@@ -56,7 +56,7 @@ pip install -r requirements.txt
 Launch the Streamlit interface:
 
 ```bash
-streamlit run app.py
+streamlit run robotics_mentor.py
 ```
 
 Open your browser at `http://localhost:8501`.
