@@ -10,7 +10,7 @@ from typing import List, Optional
 from build_deck import create_deck
 
 # ---------------------------------------------------------
-# Pydantic Schema Definitions
+# Pydantic Schema Definitions (Pydantic is basically taking the output of the Llama LLM and turning it into a .JSON file that is usable by the PowerPoint generator)
 # ---------------------------------------------------------
 class HardwareItem(BaseModel):
     name: str = Field(description="Full exact name of component or part (e.g. 'Arduino Uno', 'L298N Motor Driver', 'HC-SR04 Sensor')")
@@ -48,7 +48,7 @@ class RoboticsGuide(BaseModel):
     steps: List[AssemblyStep]
 
 # ---------------------------------------------------------
-# Cache Model Loading (Loads into RAM only ONCE)
+# Initializing LLM 
 # ---------------------------------------------------------
 @st.cache_resource
 def load_llm_engine():
@@ -63,7 +63,7 @@ def load_llm_engine():
     )
 
 # ---------------------------------------------------------
-# Streamlit Page Setup & Custom CSS
+# Streamlit Page Setup (UI)
 # ---------------------------------------------------------
 st.set_page_config(page_title="AI Robotics Mentor", page_icon="🤖", layout="wide")
 
@@ -113,7 +113,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------------------------------------------------
-# Sidebar Controls & System Status
+# Sidebar & System Status (UI)
 # ---------------------------------------------------------
 with st.sidebar:
     st.header("⚙️ System Status")
@@ -127,7 +127,7 @@ with st.sidebar:
     st.caption("All generations are executed 100% locally on your hardware.")
 
 # ---------------------------------------------------------
-# Hero Banner & Metrics Header
+# Title (UI)
 # ---------------------------------------------------------
 st.markdown("""
     <div class="hero-container">
@@ -137,7 +137,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------------------------------------------------
-# Interactive Quick-Start Prompt Pills
+# Sample Projects
 # ---------------------------------------------------------
 st.markdown("**💡 Quick-Start Project Templates:**")
 
@@ -162,7 +162,7 @@ prompt_input = st.text_area(
 )
 
 # ---------------------------------------------------------
-# System Instructions for Llama
+# System Instructions for Llama (kind of like a prompt given to Llama before the user inputs their desired project)
 # ---------------------------------------------------------
 SYSTEM_INSTRUCTIONS = (
     "You are a senior robotics mentor. Output ONLY raw JSON matching the target schema.\n\n"
