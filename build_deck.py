@@ -9,7 +9,7 @@ from pptx.enum.text import PP_ALIGN
 import graphviz
 
 # ---------------------------------------------------------
-# Theme Color Palette
+# Theme Color Palette (For presentation UI)
 # ---------------------------------------------------------
 COLOR_BG = RGBColor(248, 250, 252)         # Off-white / light slate canvas
 COLOR_HEADER_BG = RGBColor(15, 23, 42)     # Deep Slate Navy banner
@@ -25,7 +25,7 @@ FONT_MAIN = "Arial"
 FONT_CODE = "Courier New"
 
 # ---------------------------------------------------------
-# Helper Functions for Styling
+# Helper Functions for Styling the presentation
 # ---------------------------------------------------------
 def apply_slide_background(slide):
     background = slide.background
@@ -73,7 +73,7 @@ def add_card_box(slide, left, top, width, height, bg_color=COLOR_CARD_BG, border
     return card
 
 # ---------------------------------------------------------
-# Image & Graphviz Helpers
+# Image & Graphviz Helpers (Sometimes an image will be generated on the title page, and also a wiring diagram will be generated on the assembly page)
 # ---------------------------------------------------------
 def fetch_component_image(query_name, save_path="component.png"):
     try:
@@ -148,7 +148,7 @@ def create_deck(json_path="latest_guide.json", output_pptx="robotics_guide.pptx"
             print(f"Could not render Graphviz diagram: {e}")
 
     # =========================================================
-    # SLIDE 1: Title & Hero Card
+    # SLIDE 1: Title
     # =========================================================
     slide1 = prs.slides.add_slide(blank_layout)
     apply_slide_background(slide1)
@@ -366,7 +366,7 @@ def create_deck(json_path="latest_guide.json", output_pptx="robotics_guide.pptx"
             tf4.add_paragraph().text = ""
 
 # =========================================================
-    # SLIDE 5+: Source Code (Multi-Slide Pagination & Auto-Scaling)
+    # SLIDE 5+: Source Code (Can be multiple slides if code is long enough)
     # =========================================================
     for code_file in data.get("code_files", []):
         raw_code = code_file.get("code", "// No code provided")
