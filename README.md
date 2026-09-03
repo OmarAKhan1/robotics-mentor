@@ -1,6 +1,6 @@
 # 🤖 Local AI Robotics Mentor
 
-An offline, privacy-first AI system that generates structured hardware schematics, Bill of Materials (BOM), assembly steps, C++ code, and PowerPoint presentation decks using a local GGUF Large Language Model.
+An offline, AI system that generates structured hardware schematics, Bill of Materials (BOM), assembly steps, code, and PowerPoint presentation decks using a local Large Language Model.
 
 ---
 
@@ -9,17 +9,6 @@ An offline, privacy-first AI system that generates structured hardware schematic
 * **OS:** Linux (Ubuntu/Debian recommended), macOS, or Windows (WSL2)
 * **Python:** 3.10 or 3.11
 * **System Packages:** Graphviz (for schematic rendering) & C++ Build Tools (for compiling `llama-cpp-python`)
-
-### Installing System Dependencies
-
-* **Linux (Ubuntu/Debian):**
-  ```bash
-  sudo apt-get update && sudo apt-get install -y graphviz build-essential
-  ```
-* **macOS:**
-  ```bash
-  brew install graphviz
-  ```
 
 ---
 
@@ -41,12 +30,6 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-
-> **Note for GPU Acceleration (Optional):**
-> To run `llama-cpp-python` with CUDA acceleration, install it with the following flags:
-> ```bash
-> CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python --force-reinstall --upgrade --no-cache-dir
-> ```
 
 ---
 
