@@ -8,7 +8,7 @@ An offline, AI system that takes a user's proposed robotics project and generate
 
 * **OS:** Linux (Ubuntu/Debian recommended), macOS, or Windows (WSL2)
 * **Python:** 3.10 or 3.11
-**Python:** 8GB or more
+* **RAM:** 8GB or more
 ---
 
 ## ⚙️ Installation & Setup
