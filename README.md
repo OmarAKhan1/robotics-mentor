@@ -1,6 +1,6 @@
 # 🤖 Local AI Robotics Mentor
 
-An offline, AI system that generates structured hardware schematics, Bill of Materials (BOM), assembly steps, code, and PowerPoint presentation decks using a local Large Language Model.
+An offline, AI system that takes a user's proposed robotics project and generates a PowerPoint presentation deck with structured hardware schematics, Bill of Materials (BOM), assembly steps, code needed to construct said project.
 
 ---
 
@@ -8,8 +8,7 @@ An offline, AI system that generates structured hardware schematics, Bill of Mat
 
 * **OS:** Linux (Ubuntu/Debian recommended), macOS, or Windows (WSL2)
 * **Python:** 3.10 or 3.11
-* **System Packages:** Graphviz (for schematic rendering) & C++ Build Tools (for compiling `llama-cpp-python`)
-
+**Python:** 8GB or more
 ---
 
 ## ⚙️ Installation & Setup
